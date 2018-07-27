@@ -55,11 +55,11 @@ public class CalculadoraSalario {
 		else if (idade <= 39)
 			ValorPlanoDeSaude = valor.add(new BigDecimal(253.13));
 		else if (idade <= 49)
-			ValorPlanoDeSaude = valor = valor.add(new BigDecimal(379.69));
+			ValorPlanoDeSaude = valor.add(new BigDecimal(379.69));
 		else if (idade <= 59)
-			ValorPlanoDeSaude = valor = valor.add(new BigDecimal(569.54));
+			ValorPlanoDeSaude = valor.add(new BigDecimal(569.54));
 		else if (idade >= 60)
-			ValorPlanoDeSaude = valor = valor.add(new BigDecimal(854.30));
+			ValorPlanoDeSaude = valor.add(new BigDecimal(854.30));
 
 		return ValorPlanoDeSaude.setScale(2, RoundingMode.HALF_UP);
 	}

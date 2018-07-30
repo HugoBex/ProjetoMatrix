@@ -5,6 +5,10 @@ import java.math.RoundingMode;
 
 public class AvaliadorAluno {
 
+	/*
+	 * Uma mensagem de exceção serve para informar a causa do erro
+	 * e não para interação com o usuário
+	 */
 	public void verificarNota(BigDecimal nota1, BigDecimal nota2, BigDecimal nota3) {
 		BigDecimal notaMinima = new BigDecimal(0);
 		BigDecimal notaMaxima = new BigDecimal(10);
@@ -15,6 +19,10 @@ public class AvaliadorAluno {
 			throw new IllegalArgumentException("Digite um valor válido");
 	}
 
+	/*
+	 * Uma mensagem de exceção serve para informar a causa do erro
+	 * e não para interação com o usuário
+	 */
 	public BigDecimal getMaiorNota(BigDecimal[] notas) {
 		if (notas == null)
 			throw new IllegalArgumentException("Digite um valor válido");
@@ -26,6 +34,9 @@ public class AvaliadorAluno {
 		return maiorNota;
 	}
 
+	/*
+	 * Retornar o valor direto sem a necessidade das variáveis soma, qtdNotas, scale 
+	 */
 	public BigDecimal getMedia(BigDecimal nota1, BigDecimal nota2, BigDecimal nota3) {
 		verificarNota(nota1, nota2, nota3);
 		BigDecimal soma = new BigDecimal(0);
@@ -36,6 +47,7 @@ public class AvaliadorAluno {
 
 		return soma.divide(qtdNotas, scale, RoundingMode.HALF_UP);
 	}
+
 
 	public String getStatus(BigDecimal nota1, BigDecimal nota2, BigDecimal nota3) {
 		verificarNota(nota1, nota2, nota3);

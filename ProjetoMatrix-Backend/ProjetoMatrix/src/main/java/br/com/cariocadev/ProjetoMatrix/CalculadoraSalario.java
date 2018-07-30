@@ -5,11 +5,19 @@ import java.math.RoundingMode;
 
 public class CalculadoraSalario {
 
+	/*
+	 * Uma mensagem de exceção serve para informar a causa do erro
+	 * e não para interação com o usuário
+	 */
 	public void verificarValor(BigDecimal salarioBruto) {
 		if (salarioBruto == null || salarioBruto.compareTo(new BigDecimal(0)) == 0)
 			throw new IllegalArgumentException("Digite um valor válido");
 	}
 
+	/*
+	 * Uma mensagem de exceção serve para informar a causa do erro
+	 * e não para interação com o usuário
+	 */
 	public void verificarIdade(Integer idade) {
 		if (idade == null || idade<0)
 			throw new IllegalArgumentException("Digite um valor válido");
@@ -40,6 +48,10 @@ public class CalculadoraSalario {
 		return percentualImpostoINSS = percentualImpostoINSS.setScale(2, RoundingMode.HALF_UP);
 	}
 
+	/*
+	 * O método funciona corretamente. 
+	 * Entretanto como sugestão gostaria que ele fosse implementado sem o uso de ifs em cascata.
+	 */
 	public BigDecimal getValorPlanoDeSaude(Integer idade) {
 		verificarIdade(idade);
 
